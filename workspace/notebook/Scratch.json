@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "true",
 				"spark.dynamicAllocation.minExecutors": "1",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "5959eb68-46ef-40b5-a40b-3447850ae3e3"
+				"spark.autotune.trackingId": "d9650d0c-0593-4f63-9ee2-a7819e17d895"
 			}
 		},
 		"metadata": {
@@ -53,11 +53,18 @@
 				"source": [
 					"from notebookutils import mssparkutils\n",
 					"\n",
-					"openai_key = mssparkutils.credentials.getSecret(\"kv-rag-demo\", \"OPENAI_KEY\")\n",
+					"openai_key = mssparkutils.credentials.getSecret(\"keyV-rag-poc\", \"OPENAIKEY\")\n",
 					"print(\"OpenAI Key Loaded:\", openai_key[:5] + \"****\")\n",
 					""
 				],
-				"execution_count": 1
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					""
+				],
+				"execution_count": null
 			}
 		]
 	}
