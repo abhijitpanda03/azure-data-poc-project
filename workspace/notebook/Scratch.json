@@ -1,0 +1,64 @@
+{
+	"name": "Scratch",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "sparkragpoc",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 1,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "true",
+				"spark.dynamicAllocation.minExecutors": "1",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "5959eb68-46ef-40b5-a40b-3447850ae3e3"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"enableDebugMode": true,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/a9349eb9-f0c9-48ce-a866-e118711d94f0/resourceGroups/Azure_RG_synapsedev01_POC/providers/Microsoft.Synapse/workspaces/pocsynapsedev1/bigDataPools/sparkragpoc",
+				"name": "sparkragpoc",
+				"type": "Spark",
+				"endpoint": "https://pocsynapsedev1.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/sparkragpoc",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.5",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": true
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"from notebookutils import mssparkutils\n",
+					"\n",
+					"openai_key = mssparkutils.credentials.getSecret(\"kv-rag-demo\", \"OPENAI_KEY\")\n",
+					"print(\"OpenAI Key Loaded:\", openai_key[:5] + \"****\")\n",
+					""
+				],
+				"execution_count": 1
+			}
+		]
+	}
+}
